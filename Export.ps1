@@ -1,9 +1,13 @@
-Uninstall-Module -Name SharePointPnPPowerShellOnline -AllVersions
+##Uninstall-Module -Name SharePointPnPPowerShellOnline -AllVersions
 
-Install-Module -Name PnP.PowerShell -Force -AllowClobber -Scope CurrentUser
+##Install-Module -Name PnP.PowerShell -Force -AllowClobber -Scope CurrentUser
 
+# Download from https://go.microsoft.com/fwlink/?linkid=2006349
+##Import-Module .\Microsoft.PowerApps.Administration.PowerShell.psm1 -Force
+##Import-Module .\Microsoft.PowerApps.PowerShell.psm1 -Force
 
 Connect-PnPOnline -Url "https://maboejtest.sharepoint.com/sites/FlowAppsBackup"
+Add-PowerAppsAccount 
 
 
  ## Create doc lib per environment
@@ -47,14 +51,6 @@ foreach ($flow in $flows) {
 
 
 ## apps
-
-# Download from https://go.microsoft.com/fwlink/?linkid=2006349
-##Import-Module .\Microsoft.PowerApps.Administration.PowerShell.psm1 -Force
-##Import-Module .\Microsoft.PowerApps.PowerShell.psm1 -Force
-
-
-
-Add-PowerAppsAccount 
 
  
  foreach ($env in Get-PnPFlowEnvironment)

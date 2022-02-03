@@ -11,7 +11,7 @@ Add-PowerAppsAccount
 
 
  ## Create doc lib per environment
- foreach ($env in Get-PnPFlowEnvironment)
+ foreach ($env in Get-PnPPowerPlatformEnvironment)
  {
   $envname=$env.Properties.DisplayName.Replace("(Default)", "")
   
@@ -23,7 +23,7 @@ Add-PowerAppsAccount
 ## upload backup 
 
 
- foreach ($env in Get-PnPFlowEnvironment)
+ foreach ($env in Get-PnPPowerPlatformEnvironment)
  {
  $envname=$env.Properties.DisplayName.Replace("(Default)", "")
  Write-Host "Getting All Flows in " $env.Properties.DisplayName "Environment"
@@ -53,7 +53,7 @@ foreach ($flow in $flows) {
 ## apps
 
  
- foreach ($env in Get-PnPFlowEnvironment)
+ foreach ($env in Get-PnPPowerPlatformEnvironment)
  {
  
  $envname=$env.Properties.DisplayName.Replace("(Default)", "")
